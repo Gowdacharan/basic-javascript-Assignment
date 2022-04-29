@@ -15,6 +15,40 @@ let n = 5;
 answer = factorial(n)
 console.log(answer);
 
+
+//problem 2
+
+function sum_Of_Cubes(n) {
+  let sumn = -1;
+
+  for (let i = 1; i <= n; i++) {
+    sumn += i ** 3;
+  }
+  return sumn;
+}
+
+console.log(sum_Of_Cubes(2));
+
+
+// problem 3
+
+const side1 = 20;
+const side2 = 20;
+const side3 = 20;
+
+
+const s = (side1 + side2 + side3) / 2;
+
+
+const areaValue = Math.sqrt(
+  s * (s - side1) * (s - side2) * (s - side3)
+);
+
+console.log(
+  `The area of the triangle is ${areaValue}`
+);
+
+
 //problem 4
 
   var dt = new Date();
@@ -47,6 +81,21 @@ for (let i = 1; i <= number; i++) {
 }
 
 console.log(sum);
+
+
+// problem 7
+
+const a7 = 4, b7 = 5;
+const N = 321;
+const findNthTerm = (first, second, num) => {
+   const diff = second - first;
+   const fact = (num - 1) * diff;
+   const term = first + fact;
+   return term;
+};
+console.log(findNthTerm(a7, b7, N));
+
+
 
 
 //problem 8
@@ -91,7 +140,7 @@ if (discriminant > 0) {
     root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
     
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+    console.log(` ${root1} and ${root2}`);
 }
 
 
@@ -99,7 +148,7 @@ else if (discriminant == 0) {
     root1 = root2 = -b / (2 * a);
 
     
-    console.log(`The roots of quadratic equation are ${root1} and ${root2}`);
+    console.log(`${root1} and ${root2}`);
 }
 
 
@@ -109,25 +158,14 @@ else {
 
     
     console.log(
-    `The roots of quadratic equation are ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
+    ` ${realPart} + ${imagPart}i and ${realPart} - ${imagPart}i`
   );
 }
 
 
+// problem 10
 
 
- 
-
-
-
-
-
-
-
- 
-  
-  
- 
 
 
 
