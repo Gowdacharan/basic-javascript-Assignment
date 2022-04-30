@@ -163,8 +163,90 @@ else {
 }
 
 
-// problem 10
+// problem 14
 
+function leftRotate(arr, d, n6)
+{
+    for (let i = 0; i < d; i++)
+        leftRotatebyOne(arr, n6);
+}
+  
+function leftRotatebyOne(arr, n6)
+{
+    let i, temp = arr[0];
+    for (i = 0; i < n6 - 1; i++)
+        arr[i] = arr[i + 1];
+  
+    arr[n6 - 1] = temp;
+}
+  
+
+function printArray(arr, size)
+{
+    for (let i = 0; i < size; i++)
+        console.log(arr[i] + " ");
+}
+ 
+
+let arr = [1,2,3,4,5,6,7];
+let n6 = arr.length;
+let k = 2;
+     
+leftRotate(arr, k, n6);
+printArray(arr, n6);
+
+
+
+//problem 15
+
+
+function evaluatePostfix(exp)
+{
+    
+        let stack=[];
+          
+      
+        for(let i=0;i<exp.length;i++)
+        {
+            let c=exp[i];
+              
+      
+            if(! isNaN( parseInt(c) ))
+            stack.push(c.charCodeAt(0) - '0'.charCodeAt(0));
+              
+            
+            else
+            {
+                let val1 = stack.pop();
+                let val2 = stack.pop();
+                  
+                switch(c)
+                {
+                    case '+':
+                    stack.push(val2+val1);
+                    break;
+                      
+                    case '-':
+                    stack.push(val2- val1);
+                    break;
+                      
+                    case '/':
+                    stack.push(val2/val1);
+                    break;
+                      
+                    case '*':
+                    stack.push(val2*val1);
+                    break;
+              }
+            }
+        }
+        return stack.pop();  
+}
+ 
+
+let exp="531*+9-";
+console.log("problem 15 output is: "+evaluatePostfix(exp));
+ 
 
 
 
